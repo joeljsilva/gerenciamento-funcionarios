@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const exphdb = require("express-handlebars");
-const pool = require("./db/conn");
 const iempresa = require('./router/router')
+const port = process.env.PORT || 3000;
 
 // Ler arquivos vindo da requisção no body
 app.use(express.urlencoded({ extended: true }));
@@ -24,4 +24,4 @@ app.get("/", (req, res) => {
 app.use('/iempresa', iempresa)
 
 // Servidor rodando
-app.listen(3000);
+app.listen(port);
