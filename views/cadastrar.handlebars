@@ -1,0 +1,53 @@
+<div class="cadastrar-container container">
+  <div class="cadastro-text">
+    <h1>Cadastrar <span class="span-laranja">funcionário.</span></h1>
+    <p>Deseja cadastrar um novo funcionário ?</p>
+    <p>Para isso, preencha o formulário ao lado corretamente.</p>
+  </div>
+
+  <div class="cadastro-form">
+    <form class="form" action="/iempresa/cadastrarusuario" method="POST">
+      <div class="form-control">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Nome do funcionário"
+          required="required"
+        />
+      </div>
+      <div class="form-control">
+        <label for="idade">Idade</label>
+        <input
+          type="text"
+          name="idade"
+          id="idade"
+          placeholder="Idade do funcionário"
+          required="required"
+        />
+      </div>
+      <div class="form-control">
+        <label for="setor">Setor</label>
+        <input
+          type="text"
+          name="setor"
+          id="setor"
+          placeholder="Setor do funcionário"
+          required="required"
+        />
+      </div>
+      <div class="form-control">
+        <label for="registro">Número de registro</label>
+        <input
+          type="text"
+          name="registro"
+          id="registro"
+          placeholder="Número de Registro do funcionário"
+          required="required"
+        />
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</div>

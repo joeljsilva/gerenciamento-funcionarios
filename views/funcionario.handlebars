@@ -1,0 +1,21 @@
+<section class="funcionario-container">
+  <h1>Perfil do <span class="span-laranja">funcionário.</span></h1>
+  <div class="funcionario-card">
+    <div class="card-imagem">
+      <img src="/img/worker.png" alt="Funcionário" />
+    </div>
+    <div class="card-descricao">
+      <div class="card-item"><span>Nome: </span>{{funcionario.nome}}</div>
+      <div class="card-item"><span>Idade: </span>{{funcionario.idade}}</div>
+      <div class="card-item"><span>Setor: </span>{{funcionario.setor}}</div>
+      <div class="card-item"><span>Número registro:
+        </span>{{funcionario.numero_registro}}</div>
+    </div>
+  </div>
+  <div class="funcionario-actions">
+    <a class="edit" href="/iempresa/editar/{{funcionario.id}}">Editar</a>
+    <form action="/iempresa/deletar/{{funcionario.id}}" method="POST">
+      <input class="deletar" type="submit" value="Deletar funcionário">
+    </form>
+  </div>
+</section>

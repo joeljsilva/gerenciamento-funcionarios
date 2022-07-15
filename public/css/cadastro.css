@@ -1,0 +1,84 @@
+.cadastro-text h1 {
+  margin-bottom: 20px;
+}
+.cadastrar-container {
+  justify-content: center;
+  align-items: center;
+}
+.cadastro-text, .cadastro-form {
+  display: grid;
+  justify-content: center;
+}
+.form {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.192);
+  padding: 40px;
+  display: grid;
+  gap: 20px;
+  background-color: #fff;
+  width: 500px;
+  border-radius: 4px;
+}
+.form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form input {
+  padding: 15px;
+  width: 100%;
+  border: 2px solid rgb(247, 82, 5);
+  outline: none;
+  border-radius: 4px;
+}
+.form input:focus {
+  box-shadow: 0 0 2px 2px rgb(247, 82, 5);
+}
+.form button {
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgb(247, 82, 5);
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .3s;
+}
+.form button:hover {
+  background: rgb(209, 66, 0);
+}
+
+/* Medias querys */
+
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cadastrar-container {
+    padding: 20px;
+  }
+  .form {
+    min-width: 340px;
+    width: 100%;
+  }
+  .cadastro-text h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .cadastro-text p {
+    font-size: .85rem;
+  }
+  .form input  {
+    padding: 10px;
+    font-size: .85rem;
+  }
+  .form button {
+    padding: 10px;
+  }
+}

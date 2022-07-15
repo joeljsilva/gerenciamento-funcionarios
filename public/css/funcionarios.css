@@ -1,0 +1,68 @@
+.funcionarios-container h1 {
+  font-size: 2.2rem;
+}
+
+.funcionarios-container {
+  min-height: 70vh;
+  padding: 40px;
+}
+.funcionarios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  background-color: #fff;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+}
+.funcionarios-item{
+  display: flex;
+  align-items: center;
+}
+.funcionarios-item span {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(8, 8, 8);
+  font-weight: 500;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+.checar {
+  padding: 10px 30px;
+  background-color: rgb(4, 124, 172);
+  color: #fff;
+  border-radius: 4px;
+  transition: .2s;
+  display: block;
+}
+.checar:hover {
+  background-color: rgb(0, 85, 119);
+}
+
+@media (max-width: 990px) {
+  .funcionarios {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 840px) {
+  .funcionarios {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .funcionarios-container h1 {
+    font-size: 1.6rem;
+  }
+  .funcionarios {
+    padding: 40px 20px;
+  }
+  .funcionarios-item{
+    flex-direction: column;
+    gap: 20px;
+    font-size: .85rem;
+  }
+}

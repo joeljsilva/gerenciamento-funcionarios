@@ -1,0 +1,20 @@
+<section class="funcionarios-container">
+  <h1 class="title">Lista de
+    <span class="span-laranja">funcionários</span>
+    ativos
+    <span class="span-laranja">.</span></h1>
+  {{#each funcionarios}}
+    <div class="funcionarios">
+      <div class="funcionarios-item">
+        <p><img src="/img/employee.png" alt="" /></p>
+        <p><span>Nome:</span>{{this.nome}}</p>
+        <p><span>Idade:</span>{{this.idade}}</p>
+        <p><span>Setor:</span>{{this.setor}}</p>
+        <p><span>Número registro:</span>{{this.numero_registro}}</p>
+      </div>
+      <div class="funcionarios-actions">
+        <a class="checar" href="/iempresa/funcionarios/{{this.id}}">Ver Perfil</a>
+      </div>
+    </div>
+  {{/each}}
+</section>

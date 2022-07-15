@@ -1,0 +1,58 @@
+<div class="cadastrar-container container">
+  <div class="cadastro-text">
+    <h1>Editar <span class="span-laranja">funcionário.</span></h1>
+    <p>Deseja editar funcionário que está no sistema?</p>
+    <p>Para isso, preencha o formulário ao lado corretamente.</p>
+  </div>
+
+  <div class="cadastro-form">
+    <form class="form" action="/iempresa/atualizardados" method="POST">
+      <input type="hidden" name="id" value="{{funcionario.id}}">
+      <div class="form-control">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Nome do funcionário"
+          required="required"
+          value="{{funcionario.nome}}"
+        />
+      </div>
+      <div class="form-control">
+        <label for="idade">Idade</label>
+        <input
+          type="text"
+          name="idade"
+          id="idade"
+          placeholder="Idade do funcionário"
+          required="required"
+          value="{{funcionario.idade}}"
+        />
+      </div>
+      <div class="form-control">
+        <label for="setor">Setor</label>
+        <input
+          type="text"
+          name="setor"
+          id="setor"
+          placeholder="Setor do funcionário"
+          required="required"
+          value="{{funcionario.setor}}"
+        />
+      </div>
+      <div class="form-control">
+        <label for="registro">Número de registro</label>
+        <input
+          type="text"
+          name="registro"
+          id="registro"
+          placeholder="Número de Registro do funcionário"
+          required="required"
+          value="{{funcionario.numero_registro}}"
+        />
+      </div>
+      <button type="submit">Editar Funcinário</button>
+    </form>
+  </div>
+</div>
