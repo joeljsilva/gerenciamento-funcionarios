@@ -15,13 +15,13 @@ app.use(express.static("public"));
 app.engine("handlebars", exphdb.engine());
 app.set("view engine", "handlebars");
 
+// Aplicação iEmpresa
+app.use('/iempresa', iempresa)
+
 app.get("/", (req, res) => {
   const title = "iEmpresa";
   res.render("home", { title });
 });
-
-// Aplicação iEmpresa
-app.use('/iempresa', iempresa)
 
 // Servidor rodando
 app.listen(port);

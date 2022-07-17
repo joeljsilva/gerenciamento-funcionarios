@@ -9,11 +9,11 @@ router.get("/cadastrar", (req, res) => {
 });
 router.post("/cadastrarusuario", (req, res) => {
   const nome = req.body.nome;
-  const idade = req.body.idade;
+  const nascimento = req.body.nascimento;
   const setor = req.body.setor;
   const registro = req.body.registro;
   const sql = "INSERT INTO funcionarios (??, ??, ??, ??) VALUES (?, ?, ?, ?)";
-  const data = ['nome', 'idade', 'setor', 'numero_registro', nome, idade, setor, registro]
+  const data = ['nome', 'nascimento', 'setor', 'numero_registro', nome, nascimento, setor, registro]
   pool.query(sql, data, (err) => {
     if (err) {
       return console.log(err);
@@ -25,7 +25,8 @@ router.post("/cadastrarusuario", (req, res) => {
 // Mostrando os dados
 router.get("/funcionarios", (req, res) => {
   const title = "Funcionários";
-  const sql = "SELECT * FROM funcionarios";
+  const sql = "SELECT *, DATE_FORMAT(nascimento, '%d/%m/%Y') AS convertDate FROM funcionarios";
+  
   pool.query(sql, (err, data) => {
     if (err) {
       return console.log(err);
@@ -39,7 +40,7 @@ router.get("/funcionarios", (req, res) => {
 router.get("/funcionarios/:id", (req, res) => {
   const title = "Perfil Funcionário";
   const id = req.params.id;
-  const sql = "SELECT * FROM funcionarios WHERE ?? = ?";
+  const sql = "SELECT *, DATE_FORMAT(nascimento, '%d/%m/%Y') AS convertDate FROM funcionarios WHERE ?? = ?";
   const data = ['id', id]
   pool.query(sql, data, (err, data) => {
     if (err) {
@@ -54,7 +55,7 @@ router.get("/funcionarios/:id", (req, res) => {
 router.get('/editar/:id', (req, res) => {
   const title = 'Editar Funcionário'
   const id = req.params.id;
-  const sql = "SELECT * FROM funcionarios WHERE ?? = ?"
+  const sql = "SELECT *, DATE_FORMAT(nascimento, '%d/%m/%Y') AS convertDate FROM funcionarios WHERE ?? = ?"
   const data = ['id', id]
   pool.query(sql, data, (err, data) => {
     if(err) {
@@ -69,11 +70,11 @@ router.get('/editar/:id', (req, res) => {
 router.post('/atualizardados', (req, res) => {
   const id = req.body.id;
   const nome = req.body.nome;
-  const idade = +req.body.idade;
+  const nascimento = req.body.nascimento;
   const setor = req.body.setor;
   const registro = req.body.registro;
   const sql = "UPDATE funcionarios SET ?? = ?, ?? = ?, ?? = ?, ?? = ? WHERE ?? = ?;"
-  const data = ['nome', nome, 'idade', idade, 'setor', setor, 'numero_registro', registro, 'id', id]
+  const data = ['nome', nome, 'nascimento', nascimento, 'setor', setor, 'numero_registro', registro, 'id', id]
   pool.query(sql, data, (err) => {
     if (err) {
       return console.log(err)
@@ -83,9 +84,9 @@ router.post('/atualizardados', (req, res) => {
 })
 
 // Deletar perfil
-router.post('/iempresa/deletar/:id', (req, res) => {
+router.post('/deletar/:id', (req, res) => {
   const id = req.params.id;
-  const sql = "DELETE FROM funcionarios WHERE ?? = ?"
+  const sql = "DELETE FROM funcionarios WHERE ?? = ?;"
   const data = ['id', id]
   pool.query(sql, data, (err) => {
     if(err) {
