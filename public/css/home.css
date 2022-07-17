@@ -69,7 +69,7 @@
 @media (max-width: 700px) {
   .home-text {
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     padding: 20px;
   }
   .home-img {
@@ -77,13 +77,14 @@
     justify-content: center;
   }
   .home-title h1 {
+    margin-bottom: 15px;
     width: 320px;
     font-size: 1.5rem;
   }
   .home-title p {
     width: 310px;
     margin-top: 10px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   .home-img img {
     width: 100%;
@@ -94,7 +95,7 @@
   }
   .home-opcoes ul a {
     padding: 20px;
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
   .home-opcoes img {
     display: none;
