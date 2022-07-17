@@ -71,13 +71,14 @@
     flex-direction: column;
     gap: 30px;
     padding: 20px;
+    margin: 15px auto;
   }
   .home-img {
     display: flex;
     justify-content: center;
   }
   .home-title h1 {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     width: 320px;
     font-size: 1.5rem;
   }
