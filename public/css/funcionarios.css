@@ -66,4 +66,7 @@
     gap: 20px;
     font-size: .85rem;
   }
+  .funcionarios-item img {
+    align-self: center;
+  }
 }
